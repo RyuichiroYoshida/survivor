@@ -15,6 +15,10 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] GameObject _punchPrefab;
 
+    [SerializeField] ParameterTable _enemyParameters;
+    [SerializeField] ParameterTable _playerParameters;
+    [SerializeField] GameManager _gameManager;
+
     float _punchTimer = 0;
     void Start()
     {
@@ -41,6 +45,11 @@ public class PlayerController : MonoBehaviour
                 Attack(_frontRight);
                 _punchTimer = 0;
             }
+        }
+
+        if (_playerHP < 0)
+        {
+            _gameManager.GameOver();
         }
 
     }
@@ -70,6 +79,15 @@ public class PlayerController : MonoBehaviour
         else
         {
             Instantiate(_punchPrefab, new Vector2(transform.position.x - 1, transform.position.y), Quaternion.identity);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            _playerHP -= _enemyParameters.EnemyAttackDamage;
+            print(_playerHP);
         }
     }
 }

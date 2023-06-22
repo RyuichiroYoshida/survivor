@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Punch : MonoBehaviour
 {
-    [SerializeField] float _attackDamege = 1;
     [SerializeField] float _punchSpeed = 10;
 
     PlayerController _playerController;
@@ -16,7 +15,6 @@ public class Punch : MonoBehaviour
         _playerController = FindAnyObjectByType<PlayerController>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (_playerController._frontRight)
@@ -28,5 +26,13 @@ public class Punch : MonoBehaviour
             _rb.AddForce(new Vector2(-1 * _punchSpeed, transform.position.y), ForceMode2D.Impulse);
         }
         
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            
+        }
     }
 }
