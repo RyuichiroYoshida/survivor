@@ -15,8 +15,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] GameObject _punchPrefab;
 
-    [SerializeField] ParameterTable _enemyParameters;
-    [SerializeField] ParameterTable _playerParameters;
+    [SerializeField] ParameterTable _parameters;
     [SerializeField] GameManager _gameManager;
 
     float _punchTimer = 0;
@@ -74,11 +73,11 @@ public class PlayerController : MonoBehaviour
     {
         if (right)
         {
-            Instantiate(_punchPrefab, new Vector2(transform.position.x + 1, transform.position.y), Quaternion.identity);
+            Instantiate(_punchPrefab, new Vector2(transform.position.x + 0.1f, transform.position.y), Quaternion.identity);
         }
         else
         {
-            Instantiate(_punchPrefab, new Vector2(transform.position.x - 1, transform.position.y), Quaternion.identity);
+            Instantiate(_punchPrefab, new Vector2(transform.position.x - 0.1f, transform.position.y), Quaternion.identity);
         }
     }
 
@@ -86,7 +85,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            _playerHP -= _enemyParameters.EnemyAttackDamage;
+            _playerHP -= _parameters.EnemyAttackDamage;
             print(_playerHP);
         }
     }

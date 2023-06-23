@@ -9,4 +9,8 @@ public class ParameterTable : ScriptableObject
     [SerializeField] float _enemyMoveSpeed = 5; public float EnemyMoveSpeed { get {  return _enemyMoveSpeed; } }
 
     [SerializeField] float _enemyAttackDamage = 1; public float EnemyAttackDamage { get {  return _enemyAttackDamage; } }
+
+
+
+    [SerializeField] float _punchDamage = 1; public float PunchDamage { get { return _punchDamage; } }
 }
