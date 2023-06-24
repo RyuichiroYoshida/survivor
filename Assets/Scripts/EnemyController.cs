@@ -31,6 +31,7 @@ public class EnemyController : MonoBehaviour
         if (_nowHP < 0)
         {
             _gameManager.KillCount();
+            _gameManager.CoinCount(_parameters.EnemyDropCoin);
             Destroy(gameObject);
         }
     }
@@ -41,7 +42,11 @@ public class EnemyController : MonoBehaviour
         if (collision.gameObject.tag == "punch")
         {
             print("PunchHit");
-            _nowHP -= _parameters.PunchDamage;
+            _nowHP -= _parameters.PlayerPunchDamage;
+        }
+        if (collision.gameObject.tag == "Player")
+        {
+            print("playerHit");
         }
     }
 }

@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] float _playerHP = 20;
     [SerializeField] float _playerMoveSpeed = 5;
-    [SerializeField] float _punchCoolTime = 3;
+    [System.NonSerialized] public float _playerNowHP = 0;
 
     [System.NonSerialized] public bool _frontRight = true;
 
@@ -14,6 +15,7 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer _sprite;
 
     [SerializeField] GameObject _punchPrefab;
+    [SerializeField] Slider _HPbar;
 
     [SerializeField] ParameterTable _parameters;
     [SerializeField] GameManager _gameManager;
@@ -23,9 +25,11 @@ public class PlayerController : MonoBehaviour
     {
         _rb = gameObject.GetComponent<Rigidbody2D>();   
         _sprite = gameObject.GetComponent<SpriteRenderer>();
+
+        _HPbar.value = 1;
+        _playerNowHP = _playerHP;
     }
 
-    // Update is called once per frame
     void Update()
     {
         _punchTimer += Time.deltaTime;
@@ -37,16 +41,18 @@ public class PlayerController : MonoBehaviour
 
         FlipX(moveX);
 
+        _HPbar.value = _playerNowHP / _playerHP;
+
         if (Input.GetButton("Fire1"))
         {
-            if (_punchTimer > _punchCoolTime)
+            if (_punchTimer > _parameters.PlayerPunchCoolTime)
             {
                 Attack(_frontRight);
                 _punchTimer = 0;
             }
         }
 
-        if (_playerHP < 0)
+        if (_playerNowHP < 0)
         {
             _gameManager.GameOver();
         }
@@ -85,8 +91,8 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            _playerHP -= _parameters.EnemyAttackDamage;
-            print(_playerHP);
+            _playerNowHP -= _parameters.EnemyAttackDamage;
+            print(_playerNowHP);
         }
     }
 }

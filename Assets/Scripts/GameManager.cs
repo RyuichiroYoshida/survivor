@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] Text _coinText;
+
     bool IsGameOver = false;
     bool IsGamePaused = false;
     bool IsGameClear = false;
@@ -17,6 +20,7 @@ public class GameManager : MonoBehaviour
     float _gameStage = 1;*/
     float _gameTime = 0;
     float _killCounts = 0;
+    float _coin = 0;
 
     void Start()
     {
@@ -43,6 +47,12 @@ public class GameManager : MonoBehaviour
     public void KillCount()
     {
         _killCounts++;
+    }
+
+    public void CoinCount(float coin)
+    {
+        _coin += coin;
+        _coinText.text = _coin.ToString();
     }
 
     public void GameOver()
