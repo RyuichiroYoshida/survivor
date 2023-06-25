@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] Text _coinText;
+    [SerializeField] GameObject _gameoverText;
 
     bool IsGameOver = false;
     bool IsGamePaused = false;
@@ -24,7 +25,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        
+        _gameoverText.SetActive(false);
     }
 
 
@@ -58,6 +59,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         IsGameOver = true;
+        _gameoverText.SetActive(true);
         print("GameOver");
     }
 }
