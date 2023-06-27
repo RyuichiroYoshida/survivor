@@ -5,20 +5,21 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     GameObject _player;
+    Rigidbody2D _rb;
 
     float _nowHP;
 
     [SerializeField] ParameterTable _parameters;
-    [SerializeField] GameManager _gameManager;
+
     void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player");
         _nowHP = _parameters.EnemyMaxHP;
+        _rb = 
     }
 
     void Update()
     {
-        //
 
         //Enemy Player Distance
         float distance = Vector2.Distance(_player.transform.position, transform.position);
@@ -30,8 +31,9 @@ public class EnemyController : MonoBehaviour
         //Enemy Kill Counts
         if (_nowHP < 0)
         {
-            _gameManager.KillCount();
-            _gameManager.CoinCount(_parameters.EnemyDropCoin);
+            GameManager.instance.KillCount();
+            GameManager.instance.CoinCount(_parameters.EnemyDropCoin);
+            
             Destroy(gameObject);
         }
     }

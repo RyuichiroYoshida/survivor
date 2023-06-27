@@ -172,4 +172,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _punchSpeed: 3
-  _punchLife: 0.05
+  _punchLife: 0.1

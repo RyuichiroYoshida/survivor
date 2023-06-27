@@ -18,7 +18,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Slider _HPbar;
 
     [SerializeField] ParameterTable _parameters;
-    [SerializeField] GameManager _gameManager;
 
     float _punchTimer = 0;
     void Start()
@@ -54,7 +53,7 @@ public class PlayerController : MonoBehaviour
 
         if (_playerNowHP < 0)
         {
-            _gameManager.GameOver();
+            GameManager.instance.GameOver();
         }
 
     }
@@ -79,11 +78,39 @@ public class PlayerController : MonoBehaviour
     {
         if (right)
         {
-            Instantiate(_punchPrefab, new Vector2(transform.position.x + 0.1f, transform.position.y), Quaternion.identity);
+            if (_parameters.PlayerNumberOfPunches >= 3)
+            {
+                Instantiate(_punchPrefab, new Vector2(transform.localPosition.x + 0.5f, transform.localPosition.y + 1f), Quaternion.identity);
+                Instantiate(_punchPrefab, new Vector2(transform.localPosition.x + 0.5f, transform.localPosition.y), Quaternion.identity);
+                Instantiate(_punchPrefab, new Vector2(transform.localPosition.x + 0.5f, transform.localPosition.y - 1f), Quaternion.identity);
+            }
+            else if (_parameters.PlayerNumberOfPunches >= 2)
+            {
+                Instantiate(_punchPrefab, new Vector2(transform.localPosition.x + 0.5f, transform.localPosition.y + 0.5f), Quaternion.identity);
+                Instantiate(_punchPrefab, new Vector2(transform.localPosition.x + 0.5f, transform.localPosition.y - 0.5f), Quaternion.identity);
+            }
+            else
+            {
+                Instantiate(_punchPrefab, new Vector2(transform.localPosition.x + 0.5f, transform.localPosition.y), Quaternion.identity);
+            }
         }
         else
         {
-            Instantiate(_punchPrefab, new Vector2(transform.position.x - 0.1f, transform.position.y), Quaternion.identity);
+            if (_parameters.PlayerNumberOfPunches >= 3)
+            {
+                Instantiate(_punchPrefab, new Vector2(transform.localPosition.x - 0.5f, transform.localPosition.y + 1f), Quaternion.identity);
+                Instantiate(_punchPrefab, new Vector2(transform.localPosition.x - 0.5f, transform.localPosition.y), Quaternion.identity);
+                Instantiate(_punchPrefab, new Vector2(transform.localPosition.x - 0.5f, transform.localPosition.y - 1f), Quaternion.identity);
+            }
+            else if (_parameters.PlayerNumberOfPunches >= 2)
+            {
+                Instantiate(_punchPrefab, new Vector2(transform.localPosition.x - 0.5f, transform.localPosition.y + 0.5f), Quaternion.identity);
+                Instantiate(_punchPrefab, new Vector2(transform.localPosition.x - 0.5f, transform.localPosition.y - 0.5f), Quaternion.identity);
+            }
+            else
+            {
+                Instantiate(_punchPrefab, new Vector2(transform.localPosition.x - 0.5f, transform.localPosition.y), Quaternion.identity);
+            }
         }
     }
 

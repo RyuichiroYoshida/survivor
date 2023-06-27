@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>
 {
+
     [SerializeField] Text _coinText;
     [SerializeField] GameObject _gameoverText;
 
@@ -33,7 +34,7 @@ public class GameManager : MonoBehaviour
     {
         _gameTime += Time.deltaTime;
 
-
+        _coinText.text = _coin.ToString();
     }
 
 /*    void Onclick(int i)
@@ -53,7 +54,6 @@ public class GameManager : MonoBehaviour
     public void CoinCount(float coin)
     {
         _coin += coin;
-        _coinText.text = _coin.ToString();
     }
 
     public void GameOver()

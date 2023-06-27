@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0156bb3e925a4924183f374faa574a38, type: 3}
   m_Name: Parameter
   m_EditorClassIdentifier: 
-  testString: "test\u3067\u3059"
+  _enemyMaxHP: 1
+  _enemyMoveSpeed: 3
+  _enemyAttackDamage: 1
+  _enemyDropCoin: 1
+  _playerPunchDamage: 1
+  _playerPunchCoolTime: 0.1
+  _plyaerNumberOfPunches: 3
