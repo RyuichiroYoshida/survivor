@@ -7,8 +7,6 @@ public class Punch : MonoBehaviour
     [SerializeField] float _punchSpeed = 10;
     [SerializeField] float _punchLife = 2;
 
-    float time = 0;
-
     PlayerController _playerController;
 
     Rigidbody2D _rb;
@@ -21,8 +19,6 @@ public class Punch : MonoBehaviour
 
     void Update()
     {
-        time += Time.deltaTime;
-
         //ƒvƒŒƒCƒ„[‚ÌŒü‚¢‚Ä‚¢‚é•ûŒü‚É”­Ë
         if (_playerController._frontRight)
         {

@@ -15,7 +15,6 @@ public class EnemyController : MonoBehaviour
     {
         _player = GameObject.FindGameObjectWithTag("Player");
         _nowHP = _parameters.EnemyMaxHP;
-        _rb = 
     }
 
     void Update()
@@ -33,7 +32,8 @@ public class EnemyController : MonoBehaviour
         {
             GameManager.instance.KillCount();
             GameManager.instance.CoinCount(_parameters.EnemyDropCoin);
-            
+            //_rb = GetComponent<Rigidbody2D>();
+            //_rb.AddForce(Vector2.up * 100, ForceMode2D.Impulse);
             Destroy(gameObject);
         }
     }
