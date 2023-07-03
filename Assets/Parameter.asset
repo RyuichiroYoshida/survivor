@@ -16,6 +16,12 @@ MonoBehaviour:
   _enemyMoveSpeed: 3
   _enemyAttackDamage: 1
   _enemyDropCoin: 1
+  _enemyRedMaxHP: 1
+  _enemyRedMoveSpeed: 9
+  _enemyRedAttackDamage: 1
+  _enemyRedDropCoin: 3
   _playerPunchDamage: 1
   _playerPunchCoolTime: 0.1
   _plyaerNumberOfPunches: 3
+  _playerBatDamage: 1
+  _playerBatSize: 1

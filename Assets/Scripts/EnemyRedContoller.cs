@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class EnemyRedController : MonoBehaviour
 {
     GameObject _player;
     Rigidbody2D _rb;
@@ -14,7 +14,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player");
-        _nowHP = _parameters.EnemyMaxHP;
+        _nowHP = _parameters.EnemyRedMaxHP;
     }
 
     void Update()
@@ -22,18 +22,16 @@ public class EnemyController : MonoBehaviour
 
         //Enemy Player Distance
         float distance = Vector2.Distance(_player.transform.position, transform.position);
-        if (_player != null && distance !> 0.5)
+        if (_player != null && distance! > 0.5)
         {
-            transform.position = Vector3.MoveTowards(transform.position, _player.transform.position, _parameters.EnemyMoveSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, _player.transform.position, _parameters.EnemyRedMoveSpeed * Time.deltaTime);
         }
 
         //Enemy Kill Counts
         if (_nowHP <= 0)
         {
             GameManager.instance.KillCount();
-            GameManager.instance.CoinCount(_parameters.EnemyDropCoin);
-            //_rb = GetComponent<Rigidbody2D>();
-            //_rb.AddForce(Vector2.up * 100, ForceMode2D.Impulse);
+            GameManager.instance.CoinCount(_parameters.EnemyRedDropCoin);
             Destroy(gameObject);
         }
     }

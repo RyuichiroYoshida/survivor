@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : Singleton<GameManager>
@@ -8,10 +9,11 @@ public class GameManager : Singleton<GameManager>
 
     [SerializeField] Text _coinText;
     [SerializeField] GameObject _gameoverText;
+    [SerializeField] GameObject _gameoverButton;
 
-    bool IsGameOver = false;
-    bool IsGamePaused = false;
-    bool IsGameClear = false;
+    bool IsGameOver;
+    bool IsGamePaused;
+    bool IsGameClear;
 
 /*    float _gameMode;
     float _gameModeEasy = 0.5f;
@@ -24,14 +26,19 @@ public class GameManager : Singleton<GameManager>
     float _killCounts = 0;
     float _coin = 0;
 
+    float _gameTimer = 0;
+
     void Start()
     {
-        _gameoverText.SetActive(false);
+
     }
 
 
     void Update()
     {
+        GameStart();
+        GameTime();
+
         _gameTime += Time.deltaTime;
 
         _coinText.text = _coin.ToString();
@@ -60,6 +67,31 @@ public class GameManager : Singleton<GameManager>
     {
         IsGameOver = true;
         _gameoverText.SetActive(true);
+        _gameoverButton.SetActive(true);
+        Time.timeScale = 0;
         print("GameOver");
+    }
+
+    public void Title()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("title");
+    }
+
+    public void GameStart()
+    {
+        IsGameOver = false;
+        IsGamePaused = false;
+        IsGameClear = false;
+
+        _gameoverText.SetActive(false);
+        _gameoverButton.SetActive(false);
+    }
+    /// <summary>ゲーム経過時間</summary>
+    /// <returns>ゲーム経過時間を返す</returns>
+    public float GameTime()
+    {
+        _gameTime += Time.deltaTime;
+        return _gameTime;
     }
 }
