@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     GameObject _player;
-    Rigidbody2D _rb;
 
     float _nowHP;
 
@@ -32,8 +31,6 @@ public class EnemyController : MonoBehaviour
         {
             GameManager.instance.KillCount();
             GameManager.instance.CoinCount(_parameters.EnemyDropCoin);
-            //_rb = GetComponent<Rigidbody2D>();
-            //_rb.AddForce(Vector2.up * 100, ForceMode2D.Impulse);
             Destroy(gameObject);
         }
     }
@@ -41,11 +38,6 @@ public class EnemyController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "punch")
-        {
-            print("PunchHit");
-            _nowHP -= _parameters.PlayerPunchDamage;
-        }
         if (collision.gameObject.tag == "Player")
         {
             print("playerHit");
@@ -57,6 +49,11 @@ public class EnemyController : MonoBehaviour
         {
             print("BatHit");
             _nowHP -= _parameters.PlyerBatDamage;
+        }
+        if (collision.gameObject.tag == "punch")
+        {
+            print("PunchHit");
+            _nowHP -= _parameters.PlayerPunchDamage;
         }
     }
 }

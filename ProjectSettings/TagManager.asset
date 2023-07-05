@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - punch
   - GameManager
+  - bat
   layers:
   - Default
   - TransparentFX
