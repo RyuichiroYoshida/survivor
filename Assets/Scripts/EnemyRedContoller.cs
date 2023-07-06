@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyRedController : MonoBehaviour
+public class EnemyRedController : EnemyController
 {
     GameObject _player;
     Rigidbody2D _rb;
