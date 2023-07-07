@@ -13,20 +13,15 @@ public class EnemyRedController : EnemyController
 
     void Start()
     {
+        //EnemyRedController enemyRedController = new EnemyRedController();
+
         _player = GameObject.FindGameObjectWithTag("Player");
         _nowHP = _parameters.EnemyRedMaxHP;
     }
 
     void Update()
     {
-
-        //Enemy Player Distance
-        float distance = Vector2.Distance(_player.transform.position, transform.position);
-        if (_player != null && distance! > 0.5)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, _player.transform.position, _parameters.EnemyRedMoveSpeed * Time.deltaTime);
-        }
-
+        base.Distance(_player);
         //Enemy Kill Counts
         if (_nowHP <= 0)
         {
@@ -36,25 +31,25 @@ public class EnemyRedController : EnemyController
         }
     }
 
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "punch")
+    /*
+        private void OnCollisionEnter2D(Collision2D collision)
         {
-            print("PunchHit");
-            _nowHP -= _parameters.PlayerPunchDamage;
+            if (collision.gameObject.tag == "punch")
+            {
+                print("PunchHit");
+                _nowHP -= _parameters.PlayerPunchDamage;
+            }
+            if (collision.gameObject.tag == "Player")
+            {
+                print("playerHit");
+            }
         }
-        if (collision.gameObject.tag == "Player")
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            print("playerHit");
-        }
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if ((collision.gameObject.tag == "bat"))
-        {
-            print("BatHit");
-            _nowHP -= _parameters.PlyerBatDamage;
-        }
-    }
+            if ((collision.gameObject.tag == "bat"))
+            {
+                print("BatHit");
+                _nowHP -= _parameters.PlyerBatDamage;
+            }
+        }*/
 }
