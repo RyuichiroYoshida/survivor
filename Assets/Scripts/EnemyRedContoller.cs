@@ -13,7 +13,7 @@ public class EnemyRedController : EnemyController
 
     void Start()
     {
-        //EnemyRedController enemyRedController = new EnemyRedController();
+        EnemyRedController enemyRedController = new EnemyRedController();
 
         _player = GameObject.FindGameObjectWithTag("Player");
         _nowHP = _parameters.EnemyRedMaxHP;
@@ -21,7 +21,7 @@ public class EnemyRedController : EnemyController
 
     void Update()
     {
-        base.Distance(_player);
+        Distance(_player);
         //Enemy Kill Counts
         if (_nowHP <= 0)
         {
