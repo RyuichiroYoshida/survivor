@@ -4,37 +4,42 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    GameObject _player;
+    protected GameObject _player;
 
-    float _nowHP;
+    protected float _nowHp;
 
-    [SerializeField] ParameterTable _parameters;
+    public ParameterTable _parameters;
 
     void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player");
-        _nowHP = _parameters.EnemyMaxHP;
+        _nowHp = _parameters.EnemyMaxHP;
     }
 
     void Update()
     {
-        Distance(_player);
-        //Enemy Kill Counts
-        if (_nowHP <= 0)
-        {
-            GameManager.instance.KillCount();
-            GameManager.instance.CoinCount(_parameters.EnemyDropCoin);
-            Destroy(gameObject);
-        }
+        Distance(_player, _parameters.EnemyMoveSpeed);
+        KillCount(_nowHp, _parameters.EnemyDropCoin);
     }
     /// <summary>Enemy と Player の Distance</summary>
     /// <param name="player">Startで取得したプレイヤーのゲームオブジェクト</param>
-    public void Distance(GameObject player)
+    protected void Distance(GameObject player, float speed)
     {
-        float distance = Vector2.Distance(_player.transform.position, transform.position);
-        if (_player != null && distance! > 0.5)
+        float distance = Vector2.Distance(player.transform.position, transform.position);
+        if (player != null && distance! > 0.5)
         {
-            transform.position = Vector3.MoveTowards(transform.position, _player.transform.position, _parameters.EnemyMoveSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        }
+    }
+    /// <summary>Enemyの現在HPを参照して、0ならKillCountとCoinCountを加算する</summary>
+    /// <param name="nowHp">Enemyの現在Hp</param>
+    protected void KillCount(float nowHp, float dropCoin)
+    {
+        if (nowHp <= 0)
+        {
+            GameManager.instance.KillCount();
+            GameManager.instance.CoinCount(dropCoin);
+            Destroy(gameObject);
         }
     }
 
@@ -51,12 +56,12 @@ public class EnemyController : MonoBehaviour
         if ((collision.gameObject.tag == "bat"))
         {
             print("BatHit");
-            _nowHP -= _parameters.PlyerBatDamage;
+            _nowHp -= _parameters.PlyerBatDamage;
         }
         if (collision.gameObject.tag == "punch")
         {
             print("PunchHit");
-            _nowHP -= _parameters.PlayerPunchDamage;
+            _nowHp -= _parameters.PlayerPunchDamage;
         }
     }
 }

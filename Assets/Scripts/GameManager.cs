@@ -23,14 +23,14 @@ public class GameManager : Singleton<GameManager>
 //難易度変数つくりかけ
     float _gameStage = 1;*/
     float _gameTime = 0;
-    float _killCounts = 0;
-    float _coin = 0;
+    protected float _killCounts = 0;
+    protected float _coin = 0;
 
     float _gameTimer = 0;
 
     void Start()
     {
-
+        JSONLoad();
     }
 
 
@@ -76,6 +76,7 @@ public class GameManager : Singleton<GameManager>
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("title");
+        JSONSave();
     }
 
     public void GameStart()
@@ -93,5 +94,19 @@ public class GameManager : Singleton<GameManager>
     {
         _gameTime += Time.deltaTime;
         return _gameTime;
+    }
+    /// <summary>データをJSON形式で保存 </summary>
+    public void JSONSave()
+    {
+        SaveDate saveDate = new SaveDate(_coin, _killCounts);
+        string json = JsonUtility.ToJson(saveDate);
+        print(json);
+        PlayerPrefs.SetString("SaveDate", json);
+    }
+
+    public void JSONLoad()
+    {
+        string json = PlayerPrefs.GetString("SaveDate");
+        SaveDate saveDate = JsonUtility.FromJson<SaveDate>(json);
     }
 }
