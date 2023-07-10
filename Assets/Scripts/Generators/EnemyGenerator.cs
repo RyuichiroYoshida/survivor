@@ -13,12 +13,6 @@ public class EnemyGenerator : MonoBehaviour
     float timer = 0;
     float timer2 = 0;
 
-    void Start()
-    {
-        
-    }
-
-    
     void Update()
     {
         timer += Time.deltaTime;

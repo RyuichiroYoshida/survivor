@@ -8,6 +8,7 @@ TagManager:
   - punch
   - GameManager
   - bat
+  - item
   layers:
   - Default
   - TransparentFX

@@ -12,7 +12,9 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
+        //PlayerのGameObjectを取得
         _player = GameObject.FindGameObjectWithTag("Player");
+        //現在Hp(float)にパラメータから最大Hpを代入
         _nowHp = _parameters.EnemyMaxHP;
     }
 
@@ -21,7 +23,7 @@ public class EnemyController : MonoBehaviour
         Distance(_player, _parameters.EnemyMoveSpeed);
         KillCount(_nowHp, _parameters.EnemyDropCoin);
     }
-    /// <summary>Enemy と Player の Distance</summary>
+    /// <summary>Enemy と Player の Distanceを取得して、Enemyを突撃させる</summary>
     /// <param name="player">Startで取得したプレイヤーのゲームオブジェクト</param>
     protected void Distance(GameObject player, float speed)
     {
