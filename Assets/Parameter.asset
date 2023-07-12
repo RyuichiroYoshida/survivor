@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyMaxHP: 1
   _enemyMoveSpeed: 3
-  _enemyAttackDamage: 1
+  _enemyAttackDamage: 10
   _enemyDropCoin: 1
   _enemyRedMaxHP: 1
   _enemyRedMoveSpeed: 9

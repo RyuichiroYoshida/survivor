@@ -16,7 +16,7 @@ public abstract class ItemBase : MonoBehaviour
 
     private void Update()
     {
-        ItemSpawn();
+        //ItemSpawn();
     }
 
     /// <summary>Itemを乱数の座標に生成するメソッド</summary>
