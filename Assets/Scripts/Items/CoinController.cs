@@ -13,8 +13,4 @@ public class CoinController : ItemBase
         GameManager.instance.CoinCount(_coin);
         Destroy(gameObject);
     }
-    public override void ItemSpawn()
-    {
-        StartCoroutine(SpawnWait(_spawnCoolTime, this.gameObject));
-    }
 }

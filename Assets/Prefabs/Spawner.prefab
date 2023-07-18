@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8851882024184267000}
   - component: {fileID: 4044869696670190728}
+  - component: {fileID: -8922785706030280770}
   m_Layer: 0
-  m_Name: EnemySpawner
+  m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,4 +46,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemySpawnCoolTime: 2
-  _enemyPrefab: {fileID: 7176595964656328940, guid: 8458dec49ddf8804694e59bbf90acb2b, type: 3}
+  _enemyRedSpawnCoolTime: 7
+  _startRedEnemySpawnTime: 10
+  _enemyPrefabs: []
+--- !u!114 &-8922785706030280770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7859637038813612649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9761a11d62b6f84fb098b966f9964b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _coinSpawnCoolTime: 5
+  _coinPrefab: {fileID: 0}

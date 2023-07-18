@@ -123,141 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &16464678
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 16464680}
-  - component: {fileID: 16464679}
-  - component: {fileID: 16464681}
-  - component: {fileID: 16464682}
-  m_Layer: 0
-  m_Name: Coin
-  m_TagString: item
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!212 &16464679
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 16464678}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0.8643841, b: 0.0603773, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &16464680
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 16464678}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.36, y: -0.27, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &16464681
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 16464678}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
---- !u!114 &16464682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 16464678}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe894d624cb633640a922d7d5532b483, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _coin: 100
-  _spawnCoolTime: 3
 --- !u!1 &25995644
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,6 +408,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 586594056}
     m_Modifications:
+    - target: {fileID: -8922785706030280770, guid: d8231edaecbcd1a40953f3cea7ee7900, type: 3}
+      propertyPath: _coinPrefab
+      value: 
+      objectReference: {fileID: 2679820558674540234, guid: 36829e2d0f2c5f546bf8188c3ae570e9, type: 3}
+    - target: {fileID: -8922785706030280770, guid: d8231edaecbcd1a40953f3cea7ee7900, type: 3}
+      propertyPath: _coinSpawnCoolTime
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4044869696670190728, guid: d8231edaecbcd1a40953f3cea7ee7900, type: 3}
       propertyPath: _enemyPrefabs.Array.size
       value: 2
@@ -557,7 +430,7 @@ PrefabInstance:
       objectReference: {fileID: 1267437933611430589, guid: 7913b7f025a8bf7409d7bf63b06887df, type: 3}
     - target: {fileID: 7859637038813612649, guid: d8231edaecbcd1a40953f3cea7ee7900, type: 3}
       propertyPath: m_Name
-      value: EnemySpawner
+      value: Spawner
       objectReference: {fileID: 0}
     - target: {fileID: 8851882024184267000, guid: d8231edaecbcd1a40953f3cea7ee7900, type: 3}
       propertyPath: m_RootOrder
@@ -789,6 +662,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 586594056}
     m_Modifications:
+    - target: {fileID: -8922785706030280770, guid: d8231edaecbcd1a40953f3cea7ee7900, type: 3}
+      propertyPath: _coinPrefab
+      value: 
+      objectReference: {fileID: 2679820558674540234, guid: 36829e2d0f2c5f546bf8188c3ae570e9, type: 3}
+    - target: {fileID: -8922785706030280770, guid: d8231edaecbcd1a40953f3cea7ee7900, type: 3}
+      propertyPath: _coinSpawnCoolTime
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4044869696670190728, guid: d8231edaecbcd1a40953f3cea7ee7900, type: 3}
       propertyPath: _enemyPrefabs.Array.size
       value: 2
@@ -803,7 +684,7 @@ PrefabInstance:
       objectReference: {fileID: 1267437933611430589, guid: 7913b7f025a8bf7409d7bf63b06887df, type: 3}
     - target: {fileID: 7859637038813612649, guid: d8231edaecbcd1a40953f3cea7ee7900, type: 3}
       propertyPath: m_Name
-      value: EnemySpawner
+      value: Spawner
       objectReference: {fileID: 0}
     - target: {fileID: 8851882024184267000, guid: d8231edaecbcd1a40953f3cea7ee7900, type: 3}
       propertyPath: m_RootOrder
@@ -969,7 +850,7 @@ GameObject:
   m_Component:
   - component: {fileID: 586594056}
   m_Layer: 0
-  m_Name: EnemyGenerator
+  m_Name: Generator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1161,6 +1042,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 586594056}
     m_Modifications:
+    - target: {fileID: -8922785706030280770, guid: d8231edaecbcd1a40953f3cea7ee7900, type: 3}
+      propertyPath: _coinPrefab
+      value: 
+      objectReference: {fileID: 2679820558674540234, guid: 36829e2d0f2c5f546bf8188c3ae570e9, type: 3}
+    - target: {fileID: -8922785706030280770, guid: d8231edaecbcd1a40953f3cea7ee7900, type: 3}
+      propertyPath: _coinSpawnCoolTime
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4044869696670190728, guid: d8231edaecbcd1a40953f3cea7ee7900, type: 3}
       propertyPath: _enemyPrefabs.Array.size
       value: 2
@@ -1175,7 +1064,7 @@ PrefabInstance:
       objectReference: {fileID: 1267437933611430589, guid: 7913b7f025a8bf7409d7bf63b06887df, type: 3}
     - target: {fileID: 7859637038813612649, guid: d8231edaecbcd1a40953f3cea7ee7900, type: 3}
       propertyPath: m_Name
-      value: EnemySpawner
+      value: Spawner
       objectReference: {fileID: 0}
     - target: {fileID: 8851882024184267000, guid: d8231edaecbcd1a40953f3cea7ee7900, type: 3}
       propertyPath: m_RootOrder
@@ -1709,7 +1598,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8841193588238750755}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: Title
         m_Mode: 1
@@ -1872,6 +1761,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1862897579 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8421943333270997312, guid: a356726986851614281083afabb35a2a, type: 3}
+  m_PrefabInstance: {fileID: 2256534911243583827}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2033314321
 GameObject:
   m_ObjectHideFlags: 0
@@ -2216,7 +2110,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8421943333270997312, guid: a356726986851614281083afabb35a2a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8841193588238750757}
   m_SourcePrefab: {fileID: 100100000, guid: a356726986851614281083afabb35a2a, type: 3}
 --- !u!1001 &2831982909318165202
 PrefabInstance:
@@ -2226,6 +2123,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 586594056}
     m_Modifications:
+    - target: {fileID: -8922785706030280770, guid: d8231edaecbcd1a40953f3cea7ee7900, type: 3}
+      propertyPath: _coinPrefab
+      value: 
+      objectReference: {fileID: 2679820558674540234, guid: 36829e2d0f2c5f546bf8188c3ae570e9, type: 3}
+    - target: {fileID: -8922785706030280770, guid: d8231edaecbcd1a40953f3cea7ee7900, type: 3}
+      propertyPath: _coinSpawnCoolTime
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4044869696670190728, guid: d8231edaecbcd1a40953f3cea7ee7900, type: 3}
       propertyPath: _enemyPrefabs.Array.size
       value: 2
@@ -2240,7 +2145,7 @@ PrefabInstance:
       objectReference: {fileID: 1267437933611430589, guid: 7913b7f025a8bf7409d7bf63b06887df, type: 3}
     - target: {fileID: 7859637038813612649, guid: d8231edaecbcd1a40953f3cea7ee7900, type: 3}
       propertyPath: m_Name
-      value: EnemySpawner
+      value: Spawner
       objectReference: {fileID: 0}
     - target: {fileID: 8851882024184267000, guid: d8231edaecbcd1a40953f3cea7ee7900, type: 3}
       propertyPath: m_RootOrder
@@ -2299,14 +2204,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8231edaecbcd1a40953f3cea7ee7900, type: 3}
---- !u!114 &8841193588238750755 stripped
+--- !u!114 &8841193588238750757
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8283834854251876928, guid: a356726986851614281083afabb35a2a, type: 3}
-  m_PrefabInstance: {fileID: 2256534911243583827}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1862897579}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cb6ffab6ad3c29428c42622fb180697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _coinText: {fileID: 776810350}
+  _gameoverText: {fileID: 308861751}
+  _gameoverButton: {fileID: 1676915048}

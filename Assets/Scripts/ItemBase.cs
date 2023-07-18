@@ -7,8 +7,6 @@ public abstract class ItemBase : MonoBehaviour
     GameObject _player;
     public abstract void ItemUse();
 
-    public abstract void ItemSpawn();
-
     private void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player");
