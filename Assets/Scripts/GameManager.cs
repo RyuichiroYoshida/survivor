@@ -11,9 +11,10 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] GameObject _gameoverText;
     [SerializeField] GameObject _gameoverButton;
 
-    bool IsGameOver;
-    bool IsGamePaused;
-    bool IsGameClear;
+    bool _isGameOver;
+    public bool IsGameOver => _isGameOver;
+    bool _isGamePaused;
+    bool _isGameClear;
 
 /*    float _gameMode;
     float _gameModeEasy = 0.5f;
@@ -27,6 +28,8 @@ public class GameManager : Singleton<GameManager>
     protected float _coin = 0;
 
     float _gameTimer = 0;
+    /// <summary>ゲーム経過時間</summary>
+    public float GameTimer => _gameTimer;
 
     void Start()
     {
@@ -37,7 +40,6 @@ public class GameManager : Singleton<GameManager>
     void Update()
     {
         GameStart();
-        GameTime();
 
         _gameTime += Time.deltaTime;
 
@@ -65,7 +67,7 @@ public class GameManager : Singleton<GameManager>
 
     public void GameOver()
     {
-        IsGameOver = true;
+        _isGameOver = true;
         _gameoverText.SetActive(true);
         _gameoverButton.SetActive(true);
         Time.timeScale = 0;
@@ -81,19 +83,12 @@ public class GameManager : Singleton<GameManager>
 
     public void GameStart()
     {
-        IsGameOver = false;
-        IsGamePaused = false;
-        IsGameClear = false;
+        _isGameOver = false;
+        _isGamePaused = false;
+        _isGameClear = false;
 
         _gameoverText.SetActive(false);
         _gameoverButton.SetActive(false);
-    }
-    /// <summary>ゲーム経過時間</summary>
-    /// <returns>ゲーム経過時間を返す</returns>
-    public float GameTime()
-    {
-        _gameTime += Time.deltaTime;
-        return _gameTime;
     }
     /// <summary>データをJSON形式で保存 </summary>
     public void JSONSave()

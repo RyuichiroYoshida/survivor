@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class ItemBase : MonoBehaviour
 {
-    GameObject _player;
+    protected GameObject _player;
     public abstract void ItemUse();
 
     private void Start()

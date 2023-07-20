@@ -24,7 +24,7 @@ public class EnemyGenerator : MonoBehaviour
             Instantiate(_enemyPrefabs[0], new Vector2(transform.position.x + randomX, transform.position.y + randomY), Quaternion.identity);
             timer = 0;
         }
-        if (timer2 > _enemyRedSpawnCoolTime && GameManager.instance.GameTime() > _startRedEnemySpawnTime)
+        if (timer2 > _enemyRedSpawnCoolTime && GameManager.instance.GameTimer > _startRedEnemySpawnTime)
         {
             float randomX = Random.Range(-5, 5);
             float randomY = Random.Range(-5, 5);

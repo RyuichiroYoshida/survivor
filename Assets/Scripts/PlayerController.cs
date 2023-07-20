@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody2D _rb;
     SpriteRenderer _sprite;
+    GameObject _gameManager;
 
     [SerializeField] GameObject _punchPrefab;
     [SerializeField] Slider _HPbar;
@@ -24,6 +25,7 @@ public class PlayerController : MonoBehaviour
     {
         _rb = gameObject.GetComponent<Rigidbody2D>();   
         _sprite = gameObject.GetComponent<SpriteRenderer>();
+        _gameManager = transform.Find(nameof(GameManager)).gameObject;
 
         _HPbar.value = 1;
         _playerNowHP = _playerHP;
@@ -37,6 +39,7 @@ public class PlayerController : MonoBehaviour
         float moveY = Input.GetAxisRaw("Vertical");
         Vector2 direction = new Vector2(moveX, moveY).normalized;
         _rb.velocity = direction * _playerMoveSpeed;
+
 
         FlipX(moveX);
 
@@ -53,9 +56,11 @@ public class PlayerController : MonoBehaviour
 
         if (_playerNowHP < 0)
         {
+            _gameManager.transform.parent = null;
+            gameObject.transform.DetachChildren();
             GameManager.instance.GameOver();
+            Destroy(gameObject);
         }
-
     }
 
     void FlipX(float horizontal)
