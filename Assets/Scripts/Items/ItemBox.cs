@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ItemBox : MonoBehaviour
 {
-    [SerializeField] int AppleSpawnChance = 10;
+    [SerializeField] int AppleSpawnChanc = 10;
+    [SerializeField] GameObject[] _itemPrefabs;
     void Start()
     {
         
@@ -18,7 +19,11 @@ public class ItemBox : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            
+            int r = Random.Range(0, 100);
+            if (r <= AppleSpawnChanc)
+            {
+                Instantiate(_itemPrefabs[0], transform.position, Quaternion.identity);
+            }
         }
     }
 }

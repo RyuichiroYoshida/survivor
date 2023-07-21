@@ -12,11 +12,6 @@ public abstract class ItemBase : MonoBehaviour
         _player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    private void Update()
-    {
-        //ItemSpawn();
-    }
-
     /// <summary>Itemを乱数の座標に生成するメソッド</summary>
     /// <param name="item">生成するItem</param>
     protected void Generate(GameObject item)
