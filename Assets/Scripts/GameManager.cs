@@ -31,6 +31,15 @@ public class GameManager : Singleton<GameManager>
     /// <summary>ゲーム経過時間</summary>
     public float GameTimer => _gameTimer;
 
+    public enum GameState
+    {
+        /// <summary>死亡時残機無し</summary>
+        gameOver,
+        gameClear,
+        pause,
+        timeStop,
+    }
+
     void Start()
     {
         JSONLoad();
