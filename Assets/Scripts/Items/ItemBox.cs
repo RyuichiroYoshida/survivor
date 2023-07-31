@@ -25,11 +25,7 @@ public class ItemBox : MonoBehaviour
                 Instantiate(_itemPrefabs[0], transform.position, Quaternion.identity);
                 
             }
-            //void RandomSpawn(Item item, float spwanChance) =>
-            //    item switch
-            //    {
-            //        Item.Apple => Instantiate(_itemPrefabs[1])
-            //    }
+            Destroy(gameObject);
         }
     }
 }
